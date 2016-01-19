@@ -1,9 +1,9 @@
 {
   "name": "smooth-sort",
   "version": "0.1",
-  "homepage": "http://johnny.github.io/jquery-sortable/",
+  "homepage": "https://github.com/jumper423/smooth-sort",
   "authors": "Jumper423",
-  "main": "./source/js/jquery-sortable.js",
+  "main": "./src/jquery.smooth-sort.js",
   "moduleType": [
     "globals"
   ],
