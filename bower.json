@@ -12,7 +12,8 @@
     "sort",
     "sorting",
     "drag",
-    "dragging"
+    "dragging",
+    "smooth"
   ],
   "license": "Apache 2.0",
   "ignore": [
