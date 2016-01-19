@@ -75,8 +75,8 @@
                 that.eventSort = true;
                 $.each(that.items, function (i, item) {
                     item.el.remove();
-                    that.items.slice(i, 1);
                 });
+                that.items = [];
                 that.el.height(that.height);
             }
         },
