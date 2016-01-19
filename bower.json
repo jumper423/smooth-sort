@@ -1,0 +1,28 @@
+{
+  "name": "smooth-sort",
+  "version": "0.1",
+  "homepage": "http://johnny.github.io/jquery-sortable/",
+  "authors": "Jumper423",
+  "main": "./source/js/jquery-sortable.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "sortable",
+    "sort",
+    "sorting",
+    "drag",
+    "dragging"
+  ],
+  "license": "Apache 2.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.0"
+  }
+}
