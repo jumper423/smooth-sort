@@ -1,8 +1,14 @@
 {
   "name": "smooth-sort",
-  "version": "0.1",
+  "version": "1.0",
   "homepage": "https://github.com/jumper423/smooth-sort",
-  "authors": "Jumper423",
+  "authors": [
+    "Jumper423 <jump.e.r@yandex.ru>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jumper423/smooth-sort.git"
+  }
   "main": "./src/jquery.smooth-sort.js",
   "moduleType": [
     "globals"
