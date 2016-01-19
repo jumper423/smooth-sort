@@ -7,7 +7,8 @@
                 itemHeight: 'auto',
                 itemHeightStatic: true,
                 animate: 250,
-                attrSort: 'data-sort'
+                attrSort: 'data-sort',
+                revert: false
             };
 
         that.element = el;
@@ -121,10 +122,17 @@
                 options = that.options;
 
             if (that.eventSort) {
-                that.items.sort(function (a, b) {
-                    if (a.sort > b.sort) return 1;
-                    if (a.sort < b.sort) return -1;
-                });
+                if (options.revert) {
+                    that.items.sort(function (a, b) {
+                        if (a.sort > b.sort) return -1;
+                        if (a.sort < b.sort) return 1;
+                    });
+                } else {
+                    that.items.sort(function (a, b) {
+                        if (a.sort > b.sort) return 1;
+                        if (a.sort < b.sort) return -1;
+                    });
+                }
                 var height = 0;
                 if (options.itemHeight === 'auto') {
                     if (options.itemHeightStatic) {
