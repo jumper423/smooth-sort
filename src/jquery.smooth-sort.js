@@ -10,14 +10,12 @@
                 attrSort: 'data-sort',
                 revert: false
             };
-
         that.element = el;
         that.el = $(el);
         that.items = [];
         that.height = 0;
         that.eventSort = false;
         that.options = $.extend({}, defaults, options);
-
         that.initialize();
     }
 
@@ -28,23 +26,21 @@
         initialize: function () {
             var that = this,
                 options = that.options;
-
             that.el.css({
                 position: 'relative',
                 'overflow-y': 'hidden',
                 outline: 'none',
                 transition: 'height ' + options.animate + 'ms ease-out'
             });
-            that.setHeight(that.setItems(that.el.find(options.itemSelector)))
+            that.setHeight(that.setItems(that.el.find(options.itemSelector)));
             that.el.height(that.height);
             that.sort();
         },
 
         setSort: function (data) {
-            var that = this;
-            var el = data.el,
+            var that = this,
+                el = data.el,
                 sort = data.sort;
-
             $.each(that.items, function (i, item) {
                 if (item.el[0] === el[0] && item.sort != sort) {
                     item.sort = Math.floor(sort);
@@ -55,7 +51,6 @@
 
         remove: function (el) {
             var that = this;
-
             if (typeof el !== "undefined") {
                 var index = undefined;
                 $.each(that.items, function (i, item) {
@@ -83,9 +78,8 @@
 
         setItems: function (items) {
             var that = this,
-                options = that.options;
-
-            var push = [];
+                options = that.options,
+                push = [];
             items.each(function (i, el) {
                 var item = {
                     sort: Math.floor($(el).attr(options.attrSort)),
@@ -108,11 +102,9 @@
 
         add: function (items) {
             var that = this,
-                options = that.options;
-
-            var $items = $(items);
+                options = that.options,
+                $items = $(items);
             that.el.append($items);
-
             that.setHeight(that.setItems($items.filter(options.itemSelector)));
             that.el.height(that.height);
         },
@@ -120,7 +112,6 @@
         sort: function () {
             var that = this,
                 options = that.options;
-
             if (that.eventSort) {
                 if (options.revert) {
                     that.items.sort(function (a, b) {
@@ -137,18 +128,18 @@
                 if (options.itemHeight === 'auto') {
                     if (options.itemHeightStatic) {
                         $.each(that.items, function (i, item) {
-                            item.el.css('transform', 'translate3d(0px, ' + height + 'px, 0px) scale3d(1, 1, 1)');
+                            that.transform(item.el, height);
                             height += item.height;
                         });
                     } else {
                         $.each(that.items, function (i, item) {
-                            item.el.css('transform', 'translate3d(0px, ' + height + 'px, 0px) scale3d(1, 1, 1)');
+                            that.transform(item.el, height);
                             height += item.el.height();
                         });
                     }
                 } else {
                     $.each(that.items, function (i, item) {
-                        item.el.css('transform', 'translate3d(0px, ' + height + 'px, 0px) scale3d(1, 1, 1)');
+                        that.transform(item.el, height);
                         height += options.itemHeight;
                     });
                 }
@@ -158,9 +149,8 @@
 
         setHeight: function (items, remove) {
             var that = this,
-                options = that.options;
-
-            var height = 0;
+                options = that.options,
+                height = 0;
             if (options.itemHeight === 'auto') {
                 if (options.itemHeightStatic) {
                     $.each(items, function (i, item) {
@@ -179,6 +169,10 @@
             } else {
                 that.height += height;
             }
+        },
+
+        transform:function(element, height){
+            element.css('transform', 'translate3d(0px, ' + height + 'px, 0px) scale3d(1, 1, 1)');
         }
     };
 
@@ -187,7 +181,6 @@
         if (arguments.length === 0) {
             return this.first().data(dataKey);
         }
-
         return this.each(function () {
             var inputElement = $(this),
                 instance = inputElement.data(dataKey);
