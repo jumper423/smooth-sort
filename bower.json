@@ -10,9 +10,7 @@
     "url": "git://github.com/jumper423/smooth-sort.git"
   },
   "main": "./src/jquery.smooth-sort.js",
-  "moduleType": [
-    "globals"
-  ],
+  "moduleType": [],
   "keywords": [
     "sortable",
     "sort",
@@ -29,7 +27,8 @@
     "test",
     "tests"
   ],
-  "dependencies":{
+  "dependencies": {
     "jquery": ">=1.10.0"
-  }
+  },
+  "description": "Плавная сортировка вертикальных элементов"
 }
