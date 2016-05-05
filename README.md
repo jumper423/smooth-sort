@@ -8,6 +8,10 @@
 
 ## Инициализация
 
+```ssh
+bower install smooth-sort
+```
+
 ```html
 <script src="../jquery.min.js"></script>
 <script src="../src/jquery.smooth-sort.js"></script>
