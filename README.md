@@ -8,6 +8,8 @@
 
 [Демо](http://smooth-sort.infoblog1.ru/demo/)
 
+Так же есть AssetBundle для Yii2 [SmoothSortAsset](https://github.com/jumper423/yii2-smooth-sort) 
+
 Инициализация
 ------------
 
